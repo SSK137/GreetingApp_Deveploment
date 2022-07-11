@@ -1,6 +1,8 @@
 package com.example.greetingapp.Controller;
 
 import com.example.greetingapp.Module.Data;
+import com.example.greetingapp.Services.service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,5 +29,13 @@ public class control {
     @GetMapping("/param/{name}")
     public String pathData(@PathVariable String name){
         return "Hello "+name+" !!!!" ;
+    }
+
+    //Using Service Layer
+    @Autowired
+    service service1;
+    @GetMapping("/serviceData")
+    public String serviceData(){
+        return "Hello "+service1.message();
     }
 }
