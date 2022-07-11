@@ -38,4 +38,10 @@ public class control {
     public String serviceData(){
         return "Hello "+service1.message();
     }
+
+    @GetMapping("/serviceData1")
+    public Data serviceData1(@RequestBody Data data){
+        Data data1=service1.message1(data);
+        return data1;
+    }
 }
