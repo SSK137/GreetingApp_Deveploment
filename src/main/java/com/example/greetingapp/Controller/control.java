@@ -3,6 +3,7 @@ package com.example.greetingapp.Controller;
 import com.example.greetingapp.Module.Data;
 import com.example.greetingapp.Services.service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
