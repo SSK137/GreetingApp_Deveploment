@@ -34,4 +34,10 @@ public class service {
         springRepo.save(data1);
         return data1;
     }
+
+    public Data deleteData(Long id) {
+        Data data=new Data(id);
+        springRepo.delete(data);
+        return data;
+    }
 }

@@ -28,6 +28,10 @@ public class Data {
         this.id=id;
     }
 
+    public Data(Long id) {
+        this.id=id;
+    }
+
     public String getFirstName() {
         return firstName;
     }

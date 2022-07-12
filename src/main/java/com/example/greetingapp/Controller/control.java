@@ -75,4 +75,10 @@ public class control {
     public Data edit(@RequestBody Data user,@PathVariable Long id) {
         return service1.editData(user,id);
     }
+
+    //Delete Data
+    @DeleteMapping("/deleteData/{id}")
+    public Data deleteData(@PathVariable Long id){
+        return service1.deleteData(id);
+    }
 }
