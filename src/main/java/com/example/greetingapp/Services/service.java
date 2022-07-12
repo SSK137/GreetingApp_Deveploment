@@ -29,4 +29,9 @@ public class service {
     public List<Data> getallData(){
         return springRepo.findAll();
     }
+    public Data editData(Data data,Long id){
+        Data data1=new Data(data,id);
+        springRepo.save(data1);
+        return data1;
+    }
 }

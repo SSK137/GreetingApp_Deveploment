@@ -22,6 +22,12 @@ public class Data {
 
     }
 
+    public Data(Data data, Long id) {
+        this.firstName=data.firstName;
+        this.lastName=data.lastName;
+        this.id=id;
+    }
+
     public String getFirstName() {
         return firstName;
     }

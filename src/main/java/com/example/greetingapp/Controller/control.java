@@ -3,7 +3,6 @@ package com.example.greetingapp.Controller;
 import com.example.greetingapp.Module.Data;
 import com.example.greetingapp.Services.service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -70,5 +69,10 @@ public class control {
     public List<Data> getallData(){
         List<Data> data=service1.getallData();
         return data;
+    }
+    //Edit Data
+    @PutMapping("/edit/{id}")
+    public Data edit(@RequestBody Data user,@PathVariable Long id) {
+        return service1.editData(user,id);
     }
 }
