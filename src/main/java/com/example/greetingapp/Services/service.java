@@ -5,6 +5,7 @@ import com.example.greetingapp.Repository.SpringRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,5 +25,8 @@ public class service {
     }
     public Optional<Data> getmsgbyid(Long id){
         return springRepo.findById(id);
+    }
+    public List<Data> getallData(){
+        return springRepo.findAll();
     }
 }
