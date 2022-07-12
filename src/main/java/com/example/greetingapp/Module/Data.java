@@ -15,7 +15,11 @@ public class Data {
         this.lastName=data.lastName;
     }
 
+    public Data(String firstName, String lastName) {
+    }
+
     public Data() {
+
     }
 
     public String getFirstName() {

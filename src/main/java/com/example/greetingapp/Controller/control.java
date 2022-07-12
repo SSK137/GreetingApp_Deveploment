@@ -5,6 +5,8 @@ import com.example.greetingapp.Services.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 public class control {
     //Using RequestBody
@@ -39,9 +41,26 @@ public class control {
         return "Hello "+service1.message();
     }
 
+    @GetMapping("/hello")
+    public String sayPosting(@RequestParam(required = false) String firstName, @RequestParam(required = false) String lastName) {
+        if (lastName == null) lastName = "";
+        else if (firstName == null) firstName = "";
+        else if (firstName == null && lastName == null) {
+            firstName = "";
+            lastName = "";
+        }
+        return service1.sayHelloByName(firstName, lastName);
+    }
+
     @PostMapping("/serviceData1")
     public Data serviceData1(@RequestBody Data data){
         Data data1=service1.message1(data);
         return data1;
+    }
+    //Message BY ID
+    @GetMapping("/getbyid/{id}")
+    public Optional<Data> getmssgbyid (@PathVariable Long id){
+        Optional<Data> response = service1.getmsgbyid(id);
+        return response;
     }
 }
